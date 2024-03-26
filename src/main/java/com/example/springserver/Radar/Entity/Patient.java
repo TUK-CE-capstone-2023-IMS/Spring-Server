@@ -5,10 +5,11 @@ import lombok.Data;
 
 @Data
 @Entity
-public class User {
+public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String userid;
     private String password;
     private String name;
     private String age;
