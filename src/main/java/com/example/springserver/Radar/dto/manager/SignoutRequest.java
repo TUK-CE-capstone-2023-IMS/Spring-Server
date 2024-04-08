@@ -1,4 +1,4 @@
-package com.example.springserver.Radar.dto.login;
+package com.example.springserver.Radar.dto.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogoutRequest {
-    String managerId;
+public class SignoutRequest {
+    private String managerid;
+    private String password;
 }

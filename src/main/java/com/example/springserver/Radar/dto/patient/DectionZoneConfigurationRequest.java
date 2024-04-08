@@ -9,9 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DectionZoneConfigurationResponse {
+public class DectionZoneConfigurationRequest {
     private String patientid;
-    private String name;
     private String X1;
     private String X2;
     private String Y1;

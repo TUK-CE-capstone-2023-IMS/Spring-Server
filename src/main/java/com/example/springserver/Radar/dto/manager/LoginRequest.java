@@ -1,4 +1,4 @@
-package com.example.springserver.Radar.dto;
+package com.example.springserver.Radar.dto.manager;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

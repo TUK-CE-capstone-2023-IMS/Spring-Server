@@ -1,5 +1,6 @@
 package com.example.springserver.Radar.dto.patient;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,15 +10,14 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DectionZoneConfigurationResponse {
+public class PatientInfoResponse {
     private String patientid;
     private String name;
-    private String X1;
-    private String X2;
-    private String Y1;
-    private String Y2;
-    private String Z1;
-    private String Z2;
-    private String Zslope;
-    private String Yslope2;
+    private String sex;
+    private String age;
+    private String phone;
+    private String email;
+    private String address;
+    private String emergencycall;
+    private String managerid;
 }

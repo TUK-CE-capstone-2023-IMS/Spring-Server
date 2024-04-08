@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogResponse {
+public class LogSaveResponse {
     private boolean success;
     private String patientid;
     private String datetime;
