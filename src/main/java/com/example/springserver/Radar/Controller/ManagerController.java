@@ -1,23 +1,50 @@
 package com.example.springserver.Radar.Controller;
 
-import com.example.springserver.Radar.Service.AuthService;
-import com.example.springserver.Radar.dto.LoginRequest;
-import com.example.springserver.Radar.dto.LoginResponse;
+
+import com.example.springserver.Radar.Service.ManagerService;
+import com.example.springserver.Radar.dto.manager.*;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/manager")
 @RequiredArgsConstructor
-public class AuthController {
-    private final AuthService authService;
+public class ManagerController {
+    private final ManagerService managerService;
 
-    @PostMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest loginRequest) {
+    @Operation(summary = "Manager SignIn", description = "Manager 개인정보를 전송하여 회원가입합니다.")
+    @PostMapping("/signin")
+    public ManagerResponse signin(@RequestBody SigninRequest signinRequest) {
 
-        return authService.login(loginRequest);
+        return managerService.signin(signinRequest);
     }
+
+    @Operation(summary = "Manager SignOut", description = "Manager의 ID와 비밀번호를 전송하여 회원탈퇴합니다.")
+    @PostMapping("/signout")
+    public ManagerResponse signout(@RequestBody SignoutRequest signoutRequest) {
+
+        return managerService.signout(signoutRequest);
+    }
+
+    @Operation(summary = "Manager Login", description = "Manager의 ID와 비밀번호를 전송하여 로그인 가능 여부를 확인합니다.")
+    @PostMapping("/login")
+    public ManagerResponse login(@RequestBody LoginRequest loginRequest) {
+
+        return managerService.login(loginRequest);
+    }
+
+    @Operation(summary = "Manager Logout", description = "ManagerId를 전송하여 로그아웃 요청")
+    @GetMapping("/logout")
+    public ManagerResponse logout(@RequestParam String managerId) {
+        return managerService.logout(managerId);
+    }
+
+    @Operation(summary = "Manager info", description = "ManagerId를 전송하여 회원정보 요청")
+    @GetMapping("/info")
+    public ManagerInfoResponse info(@RequestParam String managerId) {
+        return managerService.info(managerId);
+    }
+
+
 }

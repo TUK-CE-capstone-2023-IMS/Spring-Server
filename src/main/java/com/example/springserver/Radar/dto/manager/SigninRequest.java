@@ -1,18 +1,15 @@
-package com.example.springserver.Radar.Entity;
+package com.example.springserver.Radar.dto.manager;
 
-import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class Manager {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Column(nullable = false)
+@NoArgsConstructor
+public class SigninRequest {
     private String managerid;
     private String password;
     private String name;

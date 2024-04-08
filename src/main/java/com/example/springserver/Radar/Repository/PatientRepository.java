@@ -1,9 +1,11 @@
 package com.example.springserver.Radar.Repository;
 
 
-import com.example.springserver.Radar.Entity.Manager;
+import com.example.springserver.Radar.Entity.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ManagerRepository extends JpaRepository<Manager, Long> {
-    Manager findByManagerid(String userId);
+public interface PatientRepository extends JpaRepository<Patient, Long> {
+    Patient findByManagerid(String userId);
+
+    Patient findByPatientid(String patientId);
 }

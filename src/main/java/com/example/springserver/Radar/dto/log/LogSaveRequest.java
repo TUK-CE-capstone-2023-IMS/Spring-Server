@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LogRequest {
-    String managerId;
-    String password;
+public class LogSaveRequest {
+    private String patientid;
+    private String datetime;
+    private String type;
+    private String content;
 }

@@ -1,24 +1,22 @@
-Managerpackage com.example.springserver.Radar.Entity;
+package com.example.springserver.Radar.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-public class Patient {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Log {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String userid;
-    private String password;
-    private String name;
-    private String age;
-    private String sex;
-    private String phone;
-    private String email;
-    private String address;
-    private String etc;
+    private String patientid;
+    private String datetime;
+    private String type;
+    private String content;
 }

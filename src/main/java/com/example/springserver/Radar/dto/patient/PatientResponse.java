@@ -1,4 +1,4 @@
-package com.example.springserver.Radar.dto.login;
+package com.example.springserver.Radar.dto.patient;
 
 
 import lombok.AllArgsConstructor;
@@ -10,9 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginResponse {
+public class PatientResponse {
+    private int id;
     private boolean success;
-    private String name;
     private String managerId;
+    private String name;
     private String message;
 }
