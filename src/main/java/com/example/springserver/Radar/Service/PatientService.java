@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class PatientService {
@@ -172,5 +174,8 @@ public class PatientService {
                 .success(true)
                 .message("환자 정보가 성공적으로 업데이트되었습니다.")
                 .build();
+    }
+    public List<Patient> getAllPatients() {
+        return patientRepository.findAll();
     }
 }

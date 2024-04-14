@@ -19,7 +19,7 @@ public class EmergencyAlertService {
     public void notifyEmergency() {
         if (emitter != null) {
             try {
-                emitter.send(SseEmitter.event().name("emergency").data("Fall detected!"));
+                emitter.send(SseEmitter.event().data("Fall detected!"));
                 System.out.println("send");
             } catch (Exception e) {
                 this.emitter = null;
