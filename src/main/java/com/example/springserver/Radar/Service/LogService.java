@@ -82,9 +82,10 @@ public class LogService {
                 .map(log -> LogResponse.builder()
                         .success(true)
                         .patientid(log.getPatientid())
+                        .type(log.getType())
+                        .content(log.getContent())
                         .datetime(log.getDatetime())
                         .type(log.getType())
-                        .message("Success")
                         .build())
                 .collect(Collectors.toList());
     }

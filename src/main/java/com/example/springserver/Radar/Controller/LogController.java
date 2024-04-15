@@ -33,7 +33,6 @@ public class LogController {
     @Operation(summary = "log datas", description = "patientId의 모든 로그 정보 반환")
     @GetMapping("/log/all")
     public List<LogResponse> getLogDatas(@RequestParam String patientId) {
-        // 여러 개의 로그 데이터를 조회하고 List<LogResponse> 형태로 반환합니다.
         return logService.getAllLogs(patientId);
     }
 }

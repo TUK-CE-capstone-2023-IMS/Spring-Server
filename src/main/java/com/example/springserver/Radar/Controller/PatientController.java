@@ -1,10 +1,13 @@
 package com.example.springserver.Radar.Controller;
 
+import com.example.springserver.Radar.Entity.Patient;
 import com.example.springserver.Radar.Service.PatientService;
 import com.example.springserver.Radar.dto.patient.*;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/patient")
@@ -51,5 +54,10 @@ public class PatientController {
     public DectionZoneConfigurationResponse patient(@RequestParam String patientId) {
 
         return patientService.getSetting(patientId);
+    }
+    @Operation(description = "모든 환자 목록 반환")
+    @GetMapping("/read")
+    public List<Patient> getAllPatients() {
+        return patientService.getAllPatients();
     }
 }
