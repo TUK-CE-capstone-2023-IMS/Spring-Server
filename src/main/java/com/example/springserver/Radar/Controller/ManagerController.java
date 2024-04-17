@@ -20,12 +20,12 @@ public class ManagerController {
         return managerService.signin(signinRequest);
     }
 
-    @Operation(summary = "Manager SignOut", description = "Manager의 ID와 비밀번호를 전송하여 회원탈퇴합니다.")
+    @Operation(summary = "Manager SignOut", description = "Manager의 ID를 전송하여 회원탈퇴합니다.")
     @PostMapping("/signout")
     public ManagerResponse signout(@RequestBody SignoutRequest signoutRequest) {
-
         return managerService.signout(signoutRequest);
     }
+
 
     @Operation(summary = "Manager Login", description = "Manager의 ID와 비밀번호를 전송하여 로그인 가능 여부를 확인합니다.")
     @PostMapping("/login")
@@ -36,14 +36,14 @@ public class ManagerController {
 
     @Operation(summary = "Manager Logout", description = "ManagerId를 전송하여 로그아웃 요청")
     @GetMapping("/logout")
-    public ManagerResponse logout(@RequestParam String managerId) {
-        return managerService.logout(managerId);
+    public ManagerResponse logout(@RequestParam String managerid) {
+        return managerService.logout(managerid);
     }
 
     @Operation(summary = "Manager info", description = "ManagerId를 전송하여 회원정보 요청")
     @GetMapping("/info")
-    public ManagerInfoResponse info(@RequestParam String managerId) {
-        return managerService.info(managerId);
+    public ManagerInfoResponse info(@RequestParam String managerid) {
+        return managerService.info(managerid);
     }
 
 

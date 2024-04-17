@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class PatientResponse {
     private int id;
     private boolean success;
-    private String managerId;
+    private String managerid;
     private String name;
     private String message;
 }

@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SignoutRequest {
     private String managerid;
-    private String password;
 }

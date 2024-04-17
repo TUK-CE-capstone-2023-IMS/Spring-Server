@@ -19,3 +19,7 @@ logging:
   level:
     org.hibernate.SQL: debug
     org.hibernate.type: trace
+
+jwt:
+  secret: 1ce2d9fcc9e367023a0920a41c1b2dcb9d3269bcee2e605e61d3506fc4fb17ae
+  expiration_time: 86400000 #1일

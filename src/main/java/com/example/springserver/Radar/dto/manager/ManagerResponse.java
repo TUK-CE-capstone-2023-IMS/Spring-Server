@@ -14,6 +14,6 @@ import lombok.NoArgsConstructor;
 public class ManagerResponse {
     private boolean success;
     private String name;
-    private String managerId;
+    private String JWToken;
     private String message;
 }

@@ -46,7 +46,7 @@ public class PatientService {
         return PatientResponse.builder()
                 .id(savedPatient.getId())
                 .success(true)
-                .managerId(savedPatient.getManagerid())
+                .managerid(savedPatient.getManagerid())
                 .name(savedPatient.getName())
                 .message("환자 정보가 성공적으로 저장되었습니다.")
                 .build();
@@ -177,5 +177,10 @@ public class PatientService {
     }
     public List<Patient> getAllPatients() {
         return patientRepository.findAll();
+    }
+
+    public List<Patient> getPatientsFromManagerId(String managerId) {
+        // PatientRepository를 사용하여 managerId에 해당하는 모든 환자 정보를 가져옴
+        return patientRepository.findByManagerid(managerId);
     }
 }

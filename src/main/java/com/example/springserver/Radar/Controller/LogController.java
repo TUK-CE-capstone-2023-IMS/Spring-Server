@@ -4,8 +4,6 @@ import com.example.springserver.Radar.Service.LogService;
 import com.example.springserver.Radar.dto.log.LogResponse;
 import com.example.springserver.Radar.dto.log.LogSaveRequest;
 import com.example.springserver.Radar.dto.log.LogSaveResponse;
-import com.example.springserver.Radar.dto.manager.ManagerResponse;
-import com.example.springserver.Radar.dto.manager.SignoutRequest;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
