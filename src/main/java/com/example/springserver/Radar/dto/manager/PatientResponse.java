@@ -20,4 +20,7 @@ public class PatientResponse {
     private String email;
     private String address;
     private String emergencycall;
+    private String imagename;
+    private String height;
+    private String weight;
 }

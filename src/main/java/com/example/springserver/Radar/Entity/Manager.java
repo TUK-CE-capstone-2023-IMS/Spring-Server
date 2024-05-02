@@ -21,5 +21,7 @@ public class Manager {
     private String phone;
     private String email;
     private String address;
+    @Builder.Default
+    private String department = "basic";
     private String etc;
 }

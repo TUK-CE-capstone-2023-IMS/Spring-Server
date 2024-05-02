@@ -21,5 +21,6 @@ public class ManagerInfoResponse {
     private String phone;
     private String email;
     private String address;
+    private String department;
     private String etc;
 }

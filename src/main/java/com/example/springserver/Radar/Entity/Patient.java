@@ -24,6 +24,10 @@ public class Patient {
     private String address;
     private String emergencycall;
     private String managerid;
+    @Builder.Default
+    private String imagename = "noimage";
+    private String height;
+    private String weight;
 
     private String X1;
     private String X2;

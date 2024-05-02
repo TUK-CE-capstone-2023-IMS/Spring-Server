@@ -42,6 +42,7 @@ public class ManagerService {
                 .phone(signinRequest.getPhone())
                 .email(signinRequest.getEmail())
                 .address(signinRequest.getAddress())
+                .department(signinRequest.getDepartment())
                 .etc(signinRequest.getEtc())
                 .build();
 
@@ -139,6 +140,7 @@ public class ManagerService {
                 .phone(manager.getPhone())
                 .email(manager.getEmail())
                 .address(manager.getAddress())
+                .department(manager.getDepartment())
                 .etc(manager.getEtc())
                 .build();
     }
@@ -168,6 +170,9 @@ public class ManagerService {
                 .email(patient.getEmail())
                 .address(patient.getAddress())
                 .emergencycall(patient.getEmergencycall())
+                .imagename(patient.getImagename())
+                .weight(patient.getWeight())
+                .height(patient.getHeight())
                 .build();
     }
 
