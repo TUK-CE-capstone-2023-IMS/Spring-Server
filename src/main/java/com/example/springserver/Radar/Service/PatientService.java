@@ -37,6 +37,9 @@ public class PatientService {
                 .address(patientSaveRequest.getAddress())
                 .emergencycall(patientSaveRequest.getEmergencycall())
                 .managerid(patientSaveRequest.getManagerid())
+                .imagename(patientSaveRequest.getImagename())
+                .weight(patientSaveRequest.getWeight())
+                .height(patientSaveRequest.getHeight())
                 .build();
 
         // 생성된 Patient 엔티티를 저장
@@ -133,6 +136,9 @@ public class PatientService {
                 .address(patient.getAddress())
                 .emergencycall(patient.getEmergencycall())
                 .managerid(patient.getManagerid())
+                .height(patient.getHeight())
+                .weight(patient.getWeight())
+                .imagename(patient.getImagename())
                 .build();
     }
 
@@ -165,6 +171,9 @@ public class PatientService {
         patient.setAddress(patientUpdateRequest.getAddress());
         patient.setEmergencycall(patientUpdateRequest.getEmergencycall());
         patient.setManagerid(patientUpdateRequest.getManagerid());
+        patient.setHeight(patientUpdateRequest.getHeight());
+        patient.setWeight(patientUpdateRequest.getWeight());
+        patient.setImagename(patientUpdateRequest.getImagename());
 
         // 데이터베이스에 변경사항을 저장합니다.
         patientRepository.save(patient);

@@ -19,4 +19,7 @@ public class PatientUpdateRequest {
     private String address;
     private String emergencycall;
     private String managerid;
+    private String imagename;
+    private String height;
+    private String weight;
 }
