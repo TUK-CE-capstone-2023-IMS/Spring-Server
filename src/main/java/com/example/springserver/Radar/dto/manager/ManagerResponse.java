@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ManagerResponse {
-    private boolean success;
+    private String success;
     private String name;
     private String managerId;
     private String message;

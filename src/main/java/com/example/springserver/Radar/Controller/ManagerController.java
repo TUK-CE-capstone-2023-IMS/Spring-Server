@@ -31,6 +31,9 @@ public class ManagerController {
     @PostMapping("/login")
     public ManagerResponse login(@RequestBody LoginRequest loginRequest) {
 
+        System.out.println(loginRequest);
+        System.out.println(managerService.login(loginRequest));
+
         return managerService.login(loginRequest);
     }
 
@@ -43,6 +46,19 @@ public class ManagerController {
     @Operation(summary = "Manager info", description = "ManagerId를 전송하여 회원정보 요청")
     @GetMapping("/info")
     public ManagerInfoResponse info(@RequestParam String managerId) {
+        return managerService.info(managerId);
+    }
+
+    @Operation(summary = "Manager info", description = "ManagerId를 전송하여 환자정보 요청")
+    @GetMapping("/patientInfo")
+    public ManagerInfoResponse patientsInfo(@RequestParam String managerId) {
+        return managerService.info(managerId);
+    }
+
+    //adf
+    @Operation(summary = "Manager info", description = "ManagerId를 전송하여 환자수 요청")
+    @GetMapping("/patientCount")
+    public ManagerInfoResponse PatientCount(@RequestParam String managerId) {
         return managerService.info(managerId);
     }
 

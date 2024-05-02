@@ -20,7 +20,7 @@ public class ManagerService {
         // 중복된 managerid가 있는지 확인
         if (managerRepository.existsByManagerid(signinRequest.getManagerid())) {
             return ManagerResponse.builder()
-                    .success(false)
+                    .success("false")
                     .message("이미 사용 중인 아이디입니다.")
                     .build();
         }
@@ -43,7 +43,7 @@ public class ManagerService {
 
         // 회원가입 결과를 반환
         return ManagerResponse.builder()
-                .success(true)
+                .success("true")
                 .name(savedManager.getName())
                 .managerId(savedManager.getManagerid())
                 .message("매니저 회원가입이 성공적으로 완료되었습니다.")
@@ -60,14 +60,14 @@ public class ManagerService {
 
         if (manager == null) {
             // 매니저가 없는 경우
-            managerResponse.setSuccess(false);
+            managerResponse.setSuccess("false");
             managerResponse.setMessage("회원탈퇴 실패: 해당 매니저 ID를 찾을 수 없습니다.");
             return managerResponse;
         }
 
         if (!manager.getPassword().equals(password)) {
             // 비밀번호가 다른 경우
-            managerResponse.setSuccess(false);
+            managerResponse.setSuccess("false");
             managerResponse.setMessage("회원탈퇴 실패: 비밀번호가 일치하지 않습니다.");
             return managerResponse;
         }
@@ -75,7 +75,7 @@ public class ManagerService {
         // 매니저가 있는 경우이고, 비밀번호도 일치하는 경우에만 삭제
         managerRepository.delete(manager);
 
-        managerResponse.setSuccess(true);
+        managerResponse.setSuccess("true");
         managerResponse.setMessage("회원탈퇴 성공: manager ID " + managerId + "가 회원탈퇴되었습니다.");
 
         return managerResponse;
@@ -88,14 +88,14 @@ public class ManagerService {
         // 매니저가 존재하지 않거나 비밀번호가 일치하지 않는 경우 로그인 실패로 처리합니다.
         if (manager == null || !manager.getPassword().equals(loginRequest.getPassword())) {
             return ManagerResponse.builder()
-                    .success(false)
+                    .success("false")
                     .message("로그인에 실패했습니다. 아이디 또는 비밀번호를 확인해주세요.")
                     .build();
         }
 
         // 로그인 성공으로 처리합니다.
         return ManagerResponse.builder()
-                .success(true)
+                .success("true")
                 .message("로그인에 성공했습니다.")
                 .name(manager.getName())
                 .managerId(manager.getManagerid())
@@ -105,7 +105,7 @@ public class ManagerService {
     public ManagerResponse logout(String managerId) {
         // 로그아웃 처리 로직을 구현합니다. 여기서는 단순히 로그아웃 성공 메시지만 반환합니다.
         return ManagerResponse.builder()
-                .success(true)
+                .success("true")
                 .message("manager " + managerId + "가 로그아웃되었습니다.")
                 .build();
     }
