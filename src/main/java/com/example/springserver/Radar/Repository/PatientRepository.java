@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-    Patient findByManagerid(String userId);
+    List<Patient> findByManagerid(String userId);
     List<Patient> findAll();
     Patient findByPatientid(String patientId);
+
+    int countByManagerid(String managerId);
 }

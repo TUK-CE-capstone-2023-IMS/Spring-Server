@@ -7,6 +7,8 @@ import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/manager")
 @RequiredArgsConstructor
@@ -46,5 +48,14 @@ public class ManagerController {
         return managerService.info(managerId);
     }
 
-
+    @Operation(summary = "Patient Info Depending Manager Id", description = "ManagerId를 전송하여 환자 정보 요청")
+    @GetMapping("/patientsInfoByManager")
+    public List<PatientResponse> PatientsInfo(@RequestParam String managerId) {
+        return managerService.patientsInfo(managerId);
+    }    
+    @Operation(summary = "Patient Count", description = "ManagerId를 전송하여 환자 수 요청")
+    @GetMapping("/patientCountByManager")
+    public PatientCountResponse PatientsCount(@RequestParam String managerId) {
+        return managerService.patientsCount(managerId);
+    }
 }

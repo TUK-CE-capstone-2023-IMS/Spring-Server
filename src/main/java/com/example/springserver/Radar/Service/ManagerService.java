@@ -1,19 +1,26 @@
 package com.example.springserver.Radar.Service;
 
 import com.example.springserver.Radar.Entity.Manager;
+import com.example.springserver.Radar.Entity.Patient;
 import com.example.springserver.Radar.Repository.ManagerRepository;
+import com.example.springserver.Radar.Repository.PatientRepository;
 import com.example.springserver.Radar.dto.manager.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ManagerService {
 
     private final ManagerRepository managerRepository;
+    private final PatientRepository patientRepository;
 
     @Autowired
-    public ManagerService(ManagerRepository managerRepository) {
+    public ManagerService(ManagerRepository managerRepository, PatientRepository patientRepository) {
         this.managerRepository = managerRepository;
+        this.patientRepository = patientRepository;
     }
 
     public ManagerResponse signin(SigninRequest signinRequest) {
@@ -133,6 +140,44 @@ public class ManagerService {
                 .email(manager.getEmail())
                 .address(manager.getAddress())
                 .etc(manager.getEtc())
+                .build();
+    }
+
+    public List<PatientResponse> patientsInfo(String managerId) {
+        // Repository를 사용하여 managerId가 같은 환자들을 찾습니다.
+        List<Patient> patients = patientRepository.findByManagerid(managerId);
+
+        // 환자 정보를 PatientResponse 객체로 변환합니다.
+        List<PatientResponse> patientResponses = new ArrayList<>();
+        for (Patient patient : patients) {
+            // 각 환자 정보를 PatientResponse로 변환하여 리스트에 추가합니다.
+            patientResponses.add(mapToPatientResponse(patient));
+        }
+
+        return patientResponses;
+    }
+
+    private PatientResponse mapToPatientResponse(Patient patient) {
+        // 환자 정보를 PatientResponse로 매핑하는 로직을 작성합니다.
+        return PatientResponse.builder()
+                .patientid(patient.getPatientid())
+                .name(patient.getName())
+                .sex(patient.getSex())
+                .age(patient.getAge())
+                .phone(patient.getPhone())
+                .email(patient.getEmail())
+                .address(patient.getAddress())
+                .emergencycall(patient.getEmergencycall())
+                .build();
+    }
+
+    public PatientCountResponse patientsCount(String managerId) {
+        // 매니저 ID를 사용하여 해당 매니저에게 할당된 환자 수를 가져옵니다.
+        long count = patientRepository.countByManagerid(managerId);
+
+        // 환자 수를 PatientCountResponse 객체로 변환하여 반환합니다.
+        return PatientCountResponse.builder()
+                .count(String.valueOf(count))
                 .build();
     }
 }
