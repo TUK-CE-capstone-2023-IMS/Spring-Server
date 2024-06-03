@@ -2,10 +2,13 @@ server:
   port: 8080
 
 spring:
+  config:
+    activate:
+      on-profile: test
   datasource:
-    url: ENC(B9Wlo9u5q+TM7miyqSBf0t4kZyMbkJHeIk7LCJUzVdnFgNSYmsvvj6JD+gH/CMfK8uQX3sKqPh72Yr9jthDwt3oehUf+dLYpS1oyX60IGsF/xiuf80ujg86PVvz/291j)
+    url: jdbc:mysql://database-1.cxeye2m4ojqi.ap-northeast-2.rds.amazonaws.com:3306/radarDB
     username: admin
-    password: ENC(Y3jbHYbwOWtrScWUEmQ2TJSiFFkVpV25)
+    password: whdmstkd04
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

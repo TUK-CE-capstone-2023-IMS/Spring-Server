@@ -28,7 +28,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'mysql:mysql-connector-java:8.0.26'
-
+	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
 	// jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	runtimeOnly 'com.mysql:mysql-connector-j'
@@ -40,10 +40,4 @@ dependencies {
 	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
 	runtimeOnly 'mysql:mysql-connector-java'
 
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
-	systemProperty "jasypt.encryptor.password", project.getProperty("jasypt.encryptor.password")
-	systemProperty "jasypt.encryptor.password", System.getProperty("jasypt.encryptor.password")
 }
