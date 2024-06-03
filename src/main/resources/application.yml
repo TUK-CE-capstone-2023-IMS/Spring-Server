@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/rdb_radar
-    username: root
-    password: 1234
+    url: ENC(B9Wlo9u5q+TM7miyqSBf0t4kZyMbkJHeIk7LCJUzVdnFgNSYmsvvj6JD+gH/CMfK8uQX3sKqPh72Yr9jthDwt3oehUf+dLYpS1oyX60IGsF/xiuf80ujg86PVvz/291j)
+    username: admin
+    password: ENC(Y3jbHYbwOWtrScWUEmQ2TJSiFFkVpV25)
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

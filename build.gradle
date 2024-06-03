@@ -27,6 +27,7 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'mysql:mysql-connector-java:8.0.26'
 
 	// jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -35,10 +36,14 @@ dependencies {
 	//swagger-ui - https://springdoc.org/
 	// http://localhost:8080/swagger-ui/index.html
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
-
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+	runtimeOnly 'mysql:mysql-connector-java'
 
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+	systemProperty "jasypt.encryptor.password", project.getProperty("jasypt.encryptor.password")
+	systemProperty "jasypt.encryptor.password", System.getProperty("jasypt.encryptor.password")
 }
