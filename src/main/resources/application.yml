@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://database-1.cxeye2m4ojqi.ap-northeast-2.rds.amazonaws.com:3306/radarDB
+    url: jdbc:mysql://database-1.cxeye2m4ojqi.ap-northeast-2.rds.amazonaws.com:3306/radar
     username: admin
     password: whdmstkd04
     driver-class-name: com.mysql.cj.jdbc.Driver
