@@ -16,4 +16,7 @@ public class LogSaveResponse {
     private String datetime;
     private String type;
     private String message;
+    private float x;
+    private float y;
+    private int area;
 }

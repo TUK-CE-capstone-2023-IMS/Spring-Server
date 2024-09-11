@@ -17,4 +17,7 @@ public class LogResponse {
     private String datetime;
     private String type;
     private String content;
+    private float x;
+    private float y;
+    private int area;
 }

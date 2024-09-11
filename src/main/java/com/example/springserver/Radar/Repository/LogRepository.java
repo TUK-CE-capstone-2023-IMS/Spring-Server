@@ -9,4 +9,6 @@ import java.util.List;
 public interface LogRepository extends JpaRepository<Log, Long> {
 
     List<Log> findByPatientid(String patientId);
+    List<Log> findByArea(int area);
+
 }

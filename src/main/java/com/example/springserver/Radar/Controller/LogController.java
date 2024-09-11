@@ -35,4 +35,9 @@ public class LogController {
     public List<LogResponse> getLogDatas(@RequestParam String patientId) {
         return logService.getAllLogs(patientId);
     }
+    @Operation(summary = "logs by area", description = "Retrieve logs by a specific area")
+    @GetMapping("/log/area")
+    public List<LogResponse> getLogsByArea(@RequestParam int area) {
+        return logService.getLogsByArea(area);
+    }
 }
